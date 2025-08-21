@@ -1,0 +1,22 @@
+# Get List of clusters
+eksctl get cluster
+
+#To create cluster without nodegroup
+eksctl create cluster --name=labekscluster --region=us-east-1 --zones=us-east-1a,us-east-1b --without-nodegroup
+
+# Get List of clusters
+eksctl get cluster
+
+# Create public Node Group
+eksctl create nodegroup --cluster=labekscluster --region=us-east-1 --name=eksdemo1-ng-public1 --node-type=t3.small --nodes=2 --nodes-min=2 --nodes-max=4 --node-volume-size=20 --ssh-access --ssh-public-key=my-key --managed --asg-access --external-dns-access --full-ecr-access --appmesh-access --alb-ingress-access
+
+#List node Group in a cluster
+eksctl get nodegroup --cluster=labekscluster
+
+#list nodes in current k8s cluster
+kubectl get nodes -o wide
+
+#Number of pods and other resources created
+kubectl get po,rs 
+kubectl get all
+
