@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: frontend-cont
-          image: paresh3292/python-jenkins:latest
+          image: paresh3292/python-jenkins:5
           ports:
             - conatinerPort: 80
